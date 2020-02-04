@@ -54,10 +54,13 @@ public class DynamicArray<T> {
     public void delete(int index) {
 
        if(index >= 0 ){
-           for(int i = index; i < size; i++){
+
+           for(int i = index; i+1 < size; i++){
                data[i] = data[i+1];
            }
+
            size--;
+           data[size] = null;
        }
     }
 
@@ -66,7 +69,7 @@ public class DynamicArray<T> {
     }
 
     public boolean Contains(String value) {
-        for(int i = 0; i <= size; i++){
+        for(int i = 0; i < size; i++){
             if(data != null && !isEmpty() && data[i].equals(value)){
                 return true;
             }
