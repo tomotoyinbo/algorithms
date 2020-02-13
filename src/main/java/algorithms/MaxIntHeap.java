@@ -2,7 +2,7 @@ package algorithms;
 
 import java.util.Arrays;
 
-public class BinaryHeap {
+public class MaxIntHeap {
 
     private int capacity = 10;
     private int size = 0;

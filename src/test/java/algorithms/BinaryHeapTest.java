@@ -5,31 +5,55 @@ import org.junit.Test;
 
 public class BinaryHeapTest {
 
-    private BinaryHeap binaryHeap;
+    private MaxIntHeap maxIntHeap;
 
     @Test
     public void extractMax(){
 
-        binaryHeap = new BinaryHeap();
-        binaryHeap.insert(42);
-        binaryHeap.insert(29);
-        binaryHeap.insert(18);
+        maxIntHeap = new MaxIntHeap();
+        maxIntHeap.insert(42);
+        maxIntHeap.insert(29);
+        maxIntHeap.insert(18);
 
         // Insert(35)
-        binaryHeap.insert(35);
+        maxIntHeap.insert(35);
 
         // Test insert
-        Assert.assertEquals(42, binaryHeap.items[0]);
-        Assert.assertEquals(35, binaryHeap.items[1]);
-        Assert.assertEquals(18, binaryHeap.items[2]);
-        Assert.assertEquals(29, binaryHeap.items[3]);
+        Assert.assertEquals(42, maxIntHeap.items[0]);
+        Assert.assertEquals(35, maxIntHeap.items[1]);
+        Assert.assertEquals(18, maxIntHeap.items[2]);
+        Assert.assertEquals(29, maxIntHeap.items[3]);
 
         // Text extract max
-        Assert.assertEquals(42, binaryHeap.extractMax());
-        Assert.assertEquals(35, binaryHeap.extractMax());
-        Assert.assertEquals(29, binaryHeap.extractMax());
-        Assert.assertEquals(18, binaryHeap.extractMax());
+        Assert.assertEquals(42, maxIntHeap.extractMax());
+        Assert.assertEquals(35, maxIntHeap.extractMax());
+        Assert.assertEquals(29, maxIntHeap.extractMax());
+        Assert.assertEquals(18, maxIntHeap.extractMax());
 
-        binaryHeap.print();
+        maxIntHeap.print();
+    }
+
+    @Test
+    public void ExtractMaxBigger() {
+        maxIntHeap = new MaxIntHeap();
+        maxIntHeap.insert(42);
+        maxIntHeap.insert(29);
+        maxIntHeap.insert(18);
+        maxIntHeap.insert(14);
+        maxIntHeap.insert(7);
+        maxIntHeap.insert(18);
+        maxIntHeap.insert(12);
+        maxIntHeap.insert(11);
+        maxIntHeap.insert(13);
+
+        Assert.assertEquals(42, maxIntHeap.extractMax());
+        Assert.assertEquals(29, maxIntHeap.extractMax());
+        Assert.assertEquals(18, maxIntHeap.extractMax());
+        Assert.assertEquals(18, maxIntHeap.extractMax());
+        Assert.assertEquals(14, maxIntHeap.extractMax());
+        Assert.assertEquals(13, maxIntHeap.extractMax());
+        Assert.assertEquals(12, maxIntHeap.extractMax());
+        Assert.assertEquals(11, maxIntHeap.extractMax());
+        Assert.assertEquals(7, maxIntHeap.extractMax());
     }
 }
