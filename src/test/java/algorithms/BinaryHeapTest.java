@@ -18,8 +18,6 @@ public class BinaryHeapTest {
         // Insert(35)
         binaryHeap.insert(35);
 
-
-
         // Test insert
         Assert.assertEquals(42, binaryHeap.items[0]);
         Assert.assertEquals(35, binaryHeap.items[1]);
