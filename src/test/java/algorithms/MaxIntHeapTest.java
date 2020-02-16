@@ -3,7 +3,7 @@ package algorithms;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class BinaryHeapTest {
+public class MaxIntHeapTest {
 
     private MaxIntHeap maxIntHeap;
 

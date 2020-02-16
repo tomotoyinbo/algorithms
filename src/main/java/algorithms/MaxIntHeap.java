@@ -5,6 +5,7 @@ import java.util.Arrays;
 public class MaxIntHeap {
 
     private int capacity = 10;
+
     private int size = 0;
 
     public int[] items = new int[capacity];
@@ -74,13 +75,13 @@ public class MaxIntHeap {
             throw new IllegalStateException();
         }
 
-        int item = items[0];        // grab the max
+        int max = items[0];        // grab the max
         items[0] = items[size - 1]; // swap top and bottom
         size--;                     // effectively deletes last entry (max)
 
         heapifyDown();              // reorder
 
-        return item;                // return max
+        return max;
     }
 
     public void heapifyUp() {
