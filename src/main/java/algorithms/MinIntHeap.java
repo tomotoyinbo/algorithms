@@ -37,6 +37,13 @@ public class MinIntHeap {
         return min;
     }
 
+    public void print() {
+        for(int i = 0; i < size; i++){
+            System.out.println(i + "["+ items[i] + "]");
+        }
+
+    }
+
     private void heapifyDown() {
 
         int index = 0;//start at the top
@@ -67,6 +74,16 @@ public class MinIntHeap {
         }
     }
 
+    private void heapifyUp() {
+
+        int index = size - 1;
+
+        while(hasParent(index) && parent(index) > items[index]){
+            swap(parentIndex(index), index);
+            index = parentIndex(index);
+        }
+    }
+
     private int leftChild(int parentIndex) {
         return items[leftChildIndex(parentIndex)];
     }
@@ -89,23 +106,6 @@ public class MinIntHeap {
 
     private int leftChildIndex(int ParentIndex) {
         return (2 * ParentIndex) + 1;
-    }
-
-    public void print() {
-        for(int i = 0; i < size; i++){
-            System.out.println(i + "["+ items[i] + "]");
-        }
-
-    }
-
-    private void heapifyUp() {
-
-        int index = size - 1;
-
-        while(hasParent(index) && parent(index) > items[index]){
-            swap(parentIndex(index), index);
-            index = parentIndex(index);
-        }
     }
 
     private boolean hasParent(int childIndex) {
