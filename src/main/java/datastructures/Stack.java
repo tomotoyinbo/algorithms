@@ -23,11 +23,6 @@ public class Stack<T> {
     public void push(T data){
 
         Node<T> newNode = new Node<>(data);
-
-        if(head == null){
-            head = newNode;
-        }
-
         newNode.next = head;
         head = newNode;
         size++;
