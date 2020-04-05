@@ -11,11 +11,11 @@ import org.junit.Test;
 
 public class LinkedListsTest {
 
-    private LinkedListOperations adder;
+    private LinkedListOperations linkedListOperations;
 
     @Before
     public void before(){
-        adder = new LinkedListOperations();
+        linkedListOperations = new LinkedListOperations();
     }
 
     @Test
@@ -41,7 +41,7 @@ public class LinkedListsTest {
         second.push(new Integer("2"));
 
         // Add them together
-        Stack<Integer> sum = adder.sum(first, second);
+        Stack<Integer> sum = linkedListOperations.sum(first, second);
 
         // Check the result
         Assert.assertEquals(3, sum.size());
@@ -109,7 +109,7 @@ public class LinkedListsTest {
         node1.setNext(node2);
         node2.setNext(node3);
 
-        SinglyLinkedNode newHeadNode = adder.insertNodeAtPosition(node1, 4, 2);
+        SinglyLinkedNode newHeadNode = linkedListOperations.insertNodeAtPosition(node1, 4, 2);
         //TODO: under construction...
     }
 
@@ -138,7 +138,7 @@ public class LinkedListsTest {
 
         node4.setPrev(node3);
 
-        DoublyLinkedNode newHeadNode = adder.sortedInsert(node1, 5);
+        DoublyLinkedNode newHeadNode = linkedListOperations.sortedInsert(node1, 5);
         //TODO: under construction...
     }
 
@@ -168,7 +168,36 @@ public class LinkedListsTest {
 
         node4.setPrev(node3);
 
-        DoublyLinkedNode reverseLinkedHeadNode = adder.reverse(node1);
+        DoublyLinkedNode reverseLinkedHeadNode = linkedListOperations.reverse(node1);
         //TODO: under construction...
+    }
+
+    @Test
+    public void testDeleteNodeAtPosition(){
+
+        SinglyLinkedNode node1 = new SinglyLinkedNode(20);
+        SinglyLinkedNode node2 = new SinglyLinkedNode(6);
+        SinglyLinkedNode node3 = new SinglyLinkedNode(2);
+        SinglyLinkedNode node4 = new SinglyLinkedNode(19);
+        SinglyLinkedNode node5 = new SinglyLinkedNode(7);
+        SinglyLinkedNode node6 = new SinglyLinkedNode(4);
+        SinglyLinkedNode node7 = new SinglyLinkedNode(15);
+        SinglyLinkedNode node8 = new SinglyLinkedNode(9);
+        SinglyLinkedNode node9 = new SinglyLinkedNode(3);
+
+        node1.setNext(node2);
+        node2.setNext(node3);
+        node3.setNext(node4);
+        node4.setNext(node5);
+        node5.setNext(node6);
+        node6.setNext(node7);
+        node7.setNext(node8);
+        node8.setNext(node9);
+
+        linkedListOperations.deleteNode(node1, 8);
+        Assert.assertNull(node8.getNext());
+
+        linkedListOperations.deleteNode(node1, 3);
+        Assert.assertEquals(node3.getNext().getData() ,node5.getData());
     }
 }
