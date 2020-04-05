@@ -55,7 +55,7 @@ public class LinkedListOperations {
     public SinglyLinkedNode deleteNode(SinglyLinkedNode head, int position) {
 
         if(head == null){
-            return head;
+            return null;
         } else {
             if(position == 0){
                 head = head.next;
