@@ -194,7 +194,8 @@ public class LinkedListsTest {
         node7.setNext(node8);
         node8.setNext(node9);
 
-        linkedListOperations.deleteNode(node1, 8);
+        SinglyLinkedNode headNode = linkedListOperations.deleteNode(node1, 8);
+        Assert.assertEquals(20, headNode.getData());
         Assert.assertNull(node8.getNext());
 
         linkedListOperations.deleteNode(node1, 3);
