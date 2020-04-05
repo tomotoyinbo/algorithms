@@ -1,4 +1,4 @@
-package challenges;
+package challenges.linkedList;
 
 import challenges.linkedlist.DoublyLinkedNode;
 import challenges.linkedlist.LinkedListOperations;
