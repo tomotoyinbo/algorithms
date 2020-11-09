@@ -68,7 +68,7 @@ public class BinarySearchTree<T> {
     //
     // Case 2: One child - copy the child to the node to be deleted and delete the child
 
-    // Case 3: Two children - re-gig the tree to turn into a Case 1 or a Case 2
+    // Case 3: Two children - re-arrange the tree to turn into a Case 1 or a Case 2
 
     // For third case we first need to
     // 1. Find the right side min

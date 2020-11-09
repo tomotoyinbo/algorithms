@@ -34,9 +34,9 @@ public class BinarySearchTreeTest {
 
         prettyPrint(binarySearchTree.getRoot());
 
-        binarySearchTree.printInOrderTraversal();
+//        binarySearchTree.printInOrderTraversal();
 //        binarySearchTree.printPreOrderTraversal();
-//        binarySearchTree.printPostOrderTraversal();
+        binarySearchTree.printPostOrderTraversal();
     }
 
     @Test
