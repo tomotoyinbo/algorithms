@@ -15,8 +15,19 @@ public class CircularNodeQueue <T> {
         }
     }
 
-    public void enqueue(Node<T> node) {
+    public void enqueue(T data) {
 
+        Node<T> newNode = new Node<>(data);
+
+        if(isEmpty()){
+            newNode.next = newNode;
+        } else {
+            newNode.next = rear.next;
+            rear.next = newNode;
+        }
+
+        rear = newNode;
+        size++;
     }
 
     public boolean isEmpty() {

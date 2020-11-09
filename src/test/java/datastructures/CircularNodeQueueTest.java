@@ -28,13 +28,9 @@ public class CircularNodeQueueTest {
 
         queue = new CircularNodeQueue<>(null);
 
-        Node<String> node1 = new Node<>("a");
-        Node<String> node2 = new Node<>("b");
-        Node<String> node3 = new Node<>("c");
-
-        queue.enqueue(node1);
-        queue.enqueue(node2);
-        queue.enqueue(node3);
+        queue.enqueue("a");
+        queue.enqueue("b");
+        queue.enqueue("c");
 
         Assert.assertEquals(3, queue.size());
     }
@@ -52,16 +48,14 @@ public class CircularNodeQueueTest {
 
         queue = new CircularNodeQueue<>(null);
 
-        Node<String> node1 = new Node<>("a");
-        Node<String> node2 = new Node<>("b");
-        Node<String> node3 = new Node<>("c");
-
-        queue.enqueue(node1);
-        queue.enqueue(node2);
-        queue.enqueue(node3);
+        queue.enqueue("a");
+        queue.enqueue("b");
+        queue.enqueue("c");
 
         Assert.assertEquals(3, queue.size());
 
         queue.dequeue();
+
+        Assert.assertEquals(2, queue.size());
     }
 }
