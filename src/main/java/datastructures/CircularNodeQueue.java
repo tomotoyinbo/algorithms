@@ -47,11 +47,17 @@ public class CircularNodeQueue <T> {
         return size;
     }
 
-    public void dequeue() {
+    public T dequeue() {
 
-        if(rear == null){
+        if(isEmpty()){
             throw new NoSuchElementException();
         }
 
+        T nodeValue = rear.next.data;
+
+        rear.next = rear.next.next;
+        size--;
+
+        return nodeValue;
     }
 }

@@ -57,5 +57,6 @@ public class CircularNodeQueueTest {
         queue.dequeue();
 
         Assert.assertEquals(2, queue.size());
+        Assert.assertEquals("b", queue.peek());
     }
 }
